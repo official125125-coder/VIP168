@@ -6,7 +6,7 @@
 /* CUSTOMER SERVICE */
 
 var whatsappCustomerLink =
-    "https://wa.me/message/XAWEGLL6H4OKC1";
+    "https://wa.me/qr/Y5HNIWJKBKANN1";
 
 var telegramCustomerLink =
     "https://t.me/Vip_168_cs";
