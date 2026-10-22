@@ -4,15 +4,17 @@
 
 
 /* ==================================================
-   WHATSAPP CUSTOMER SERVICE
-   Direct chat
+   WHATSAPP
 ================================================== */
 
 var whatsappNumber =
     "601137185849";
 
 var whatsappMessage =
-    "Hi VIP168, saya ingin bertanya.";
+    "Hi Vip168, saya nak joint";
+
+
+/* WhatsApp Customer Service */
 
 var whatsappCustomerLink =
     "https://wa.me/" +
@@ -21,10 +23,7 @@ var whatsappCustomerLink =
     encodeURIComponent(whatsappMessage);
 
 
-/* ==================================================
-   WHATSAPP GROUP / CHANNEL
-   Menggunakan nombor WhatsApp yang sama
-================================================== */
+/* WhatsApp Group / Channel */
 
 var whatsappGroupLink =
     "https://wa.me/" +
@@ -95,14 +94,12 @@ function openGamePopup(gameName) {
         return;
     }
 
-
     if (popupGameName) {
 
         popupGameName.textContent =
             gameName;
 
     }
-
 
     if (popupGameText) {
 
@@ -111,17 +108,14 @@ function openGamePopup(gameName) {
 
     }
 
-
     gamePopup.classList.add(
         "active"
     );
-
 
     gamePopup.setAttribute(
         "aria-hidden",
         "false"
     );
-
 
     document.body.classList.add(
         "popup-open"
@@ -140,17 +134,14 @@ function closeGamePopup() {
         return;
     }
 
-
     gamePopup.classList.remove(
         "active"
     );
-
 
     gamePopup.setAttribute(
         "aria-hidden",
         "true"
     );
-
 
     document.body.classList.remove(
         "popup-open"
@@ -177,7 +168,6 @@ for (
                 this.getAttribute(
                     "data-game"
                 );
-
 
             openGamePopup(
                 gameName
@@ -253,13 +243,9 @@ function openOfficialLink(link) {
         return;
     }
 
-
     /*
-       Gunakan location.href supaya klik
-       dianggap sebagai navigasi langsung.
-
-       Ini lebih sesuai untuk mobile browser
-       berbanding membuka tab baru.
+       Navigasi langsung lebih sesuai
+       untuk browser mobile.
     */
 
     window.location.href =
@@ -278,16 +264,7 @@ if (popupWhatsapp) {
         "click",
         function () {
 
-            /*
-               Tutup popup dahulu
-            */
-
             closeGamePopup();
-
-
-            /*
-               Buka WhatsApp direct chat
-            */
 
             openOfficialLink(
                 whatsappCustomerLink
@@ -310,7 +287,6 @@ if (popupTelegram) {
         function () {
 
             closeGamePopup();
-
 
             openOfficialLink(
                 telegramCustomerLink
@@ -384,9 +360,7 @@ if (backTop) {
         "scroll",
         function () {
 
-            if (
-                window.scrollY > 500
-            ) {
+            if (window.scrollY > 500) {
 
                 backTop.classList.add(
                     "show"
@@ -412,8 +386,7 @@ if (backTop) {
 
                 top: 0,
 
-                behavior:
-                    "smooth"
+                behavior: "smooth"
 
             });
 
