@@ -3,25 +3,50 @@
 ========================================== */
 
 
-/* CUSTOMER SERVICE */
+/* ==================================================
+   WHATSAPP CUSTOMER SERVICE
+   Direct chat
+================================================== */
+
+var whatsappNumber =
+    "601137185849";
+
+var whatsappMessage =
+    "Hi VIP168, saya ingin bertanya.";
 
 var whatsappCustomerLink =
-    "https://wa.me/qr/Y5HNIWJKBKANN1";
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(whatsappMessage);
+
+
+/* ==================================================
+   WHATSAPP GROUP / CHANNEL
+   Menggunakan nombor WhatsApp yang sama
+================================================== */
+
+var whatsappGroupLink =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(whatsappMessage);
+
+
+/* ==================================================
+   TELEGRAM
+================================================== */
 
 var telegramCustomerLink =
     "https://t.me/Vip_168_cs";
-
-
-/* GROUP / CHANNEL */
-
-var whatsappGroupLink =
-    "https://wa.me/qr/Y5HNIWJKBKANN1";
 
 var telegramChannelLink =
     "https://t.me/VIP168_Channel";
 
 
-/* ELEMENTS */
+/* ==================================================
+   ELEMENT
+================================================== */
 
 var gamePopup =
     document.getElementById("gamePopup");
@@ -60,7 +85,9 @@ var gameCards =
     document.querySelectorAll(".game-card");
 
 
-/* OPEN POPUP */
+/* ==================================================
+   OPEN GAME POPUP
+================================================== */
 
 function openGamePopup(gameName) {
 
@@ -68,32 +95,44 @@ function openGamePopup(gameName) {
         return;
     }
 
+
     if (popupGameName) {
+
         popupGameName.textContent =
             gameName;
+
     }
 
+
     if (popupGameText) {
+
         popupGameText.textContent =
             gameName;
+
     }
+
 
     gamePopup.classList.add(
         "active"
     );
+
 
     gamePopup.setAttribute(
         "aria-hidden",
         "false"
     );
 
+
     document.body.classList.add(
         "popup-open"
     );
+
 }
 
 
-/* CLOSE POPUP */
+/* ==================================================
+   CLOSE GAME POPUP
+================================================== */
 
 function closeGamePopup() {
 
@@ -101,22 +140,28 @@ function closeGamePopup() {
         return;
     }
 
+
     gamePopup.classList.remove(
         "active"
     );
+
 
     gamePopup.setAttribute(
         "aria-hidden",
         "true"
     );
 
+
     document.body.classList.remove(
         "popup-open"
     );
+
 }
 
 
-/* GAME CARD */
+/* ==================================================
+   GAME CARD CLICK
+================================================== */
 
 for (
     var i = 0;
@@ -133,6 +178,7 @@ for (
                     "data-game"
                 );
 
+
             openGamePopup(
                 gameName
             );
@@ -143,31 +189,45 @@ for (
 }
 
 
-/* CLOSE BUTTON */
+/* ==================================================
+   CLOSE POPUP BUTTON
+================================================== */
 
 if (popupClose) {
 
     popupClose.addEventListener(
         "click",
-        closeGamePopup
+        function () {
+
+            closeGamePopup();
+
+        }
     );
 
 }
 
 
-/* CLICK OUTSIDE */
+/* ==================================================
+   CLICK OUTSIDE POPUP
+================================================== */
 
 if (popupOverlay) {
 
     popupOverlay.addEventListener(
         "click",
-        closeGamePopup
+        function () {
+
+            closeGamePopup();
+
+        }
     );
 
 }
 
 
-/* ESC */
+/* ==================================================
+   ESC CLOSE
+================================================== */
 
 document.addEventListener(
     "keydown",
@@ -183,7 +243,9 @@ document.addEventListener(
 );
 
 
-/* OPEN OFFICIAL LINK */
+/* ==================================================
+   OPEN LINK
+================================================== */
 
 function openOfficialLink(link) {
 
@@ -191,21 +253,41 @@ function openOfficialLink(link) {
         return;
     }
 
-    window.open(
-        link,
-        "_blank",
-        "noopener,noreferrer"
-    );
+
+    /*
+       Gunakan location.href supaya klik
+       dianggap sebagai navigasi langsung.
+
+       Ini lebih sesuai untuk mobile browser
+       berbanding membuka tab baru.
+    */
+
+    window.location.href =
+        link;
+
 }
 
 
-/* WHATSAPP CUSTOMER SERVICE */
+/* ==================================================
+   WHATSAPP CUSTOMER SERVICE
+================================================== */
 
 if (popupWhatsapp) {
 
     popupWhatsapp.addEventListener(
         "click",
         function () {
+
+            /*
+               Tutup popup dahulu
+            */
+
+            closeGamePopup();
+
+
+            /*
+               Buka WhatsApp direct chat
+            */
 
             openOfficialLink(
                 whatsappCustomerLink
@@ -217,13 +299,18 @@ if (popupWhatsapp) {
 }
 
 
-/* TELEGRAM CUSTOMER SERVICE */
+/* ==================================================
+   TELEGRAM CUSTOMER SERVICE
+================================================== */
 
 if (popupTelegram) {
 
     popupTelegram.addEventListener(
         "click",
         function () {
+
+            closeGamePopup();
+
 
             openOfficialLink(
                 telegramCustomerLink
@@ -235,7 +322,9 @@ if (popupTelegram) {
 }
 
 
-/* WHATSAPP CHANNEL */
+/* ==================================================
+   WHATSAPP GROUP / CHANNEL
+================================================== */
 
 if (whatsappGroup) {
 
@@ -253,7 +342,9 @@ if (whatsappGroup) {
 }
 
 
-/* TELEGRAM CHANNEL */
+/* ==================================================
+   TELEGRAM CHANNEL
+================================================== */
 
 if (telegramChannel) {
 
@@ -271,7 +362,9 @@ if (telegramChannel) {
 }
 
 
-/* YEAR */
+/* ==================================================
+   CURRENT YEAR
+================================================== */
 
 if (year) {
 
@@ -281,7 +374,9 @@ if (year) {
 }
 
 
-/* BACK TOP */
+/* ==================================================
+   BACK TO TOP
+================================================== */
 
 if (backTop) {
 
@@ -289,7 +384,9 @@ if (backTop) {
         "scroll",
         function () {
 
-            if (window.scrollY > 500) {
+            if (
+                window.scrollY > 500
+            ) {
 
                 backTop.classList.add(
                     "show"
@@ -312,10 +409,15 @@ if (backTop) {
         function () {
 
             window.scrollTo({
+
                 top: 0,
-                behavior: "smooth"
+
+                behavior:
+                    "smooth"
+
             });
 
         }
     );
+
 }
