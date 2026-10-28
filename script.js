@@ -1,231 +1,206 @@
-/* ==========================================
-   VIP168
-========================================== */
+/* =========================
+   QKW996 LINKS
+========================= */
+
+const whatsappLink =
+    "https://wa.link/2j7twc";
+
+const telegramSupportLink =
+    "https://t.me/Qkw_996";
+
+const telegramChannelLink =
+    "https://t.me/QKWIN996";
 
 
-/* ==================================================
-   WHATSAPP
-================================================== */
+/* =========================
+   ELEMENTS
+========================= */
 
-var whatsappNumber =
-    "601137185849";
+const whatsappButton =
+    document.getElementById("whatsappButton");
 
-var whatsappMessage =
-    "Hi Vip168, saya nak joint";
+const telegramChannelButton =
+    document.getElementById("telegramChannelButton");
 
+const modal =
+    document.getElementById("contactModal");
 
-/* WhatsApp Customer Service */
+const modalTitle =
+    document.getElementById("modalTitle");
 
-var whatsappCustomerLink =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(whatsappMessage);
+const modalText =
+    document.getElementById("modalText");
 
+const modalWhatsapp =
+    document.getElementById("modalWhatsapp");
 
-/* WhatsApp Group / Channel */
+const modalTelegram =
+    document.getElementById("modalTelegram");
 
-var whatsappGroupLink =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(whatsappMessage);
+const closeModal =
+    document.getElementById("closeModal");
 
-
-/* ==================================================
-   TELEGRAM
-================================================== */
-
-var telegramCustomerLink =
-    "https://t.me/Vip_168_cs";
-
-var telegramChannelLink =
-    "https://t.me/VIP168_Channel";
-
-
-/* ==================================================
-   ELEMENT
-================================================== */
-
-var gamePopup =
-    document.getElementById("gamePopup");
-
-var popupGameName =
-    document.getElementById("popupGameName");
-
-var popupGameText =
-    document.getElementById("popupGameText");
-
-var popupClose =
-    document.getElementById("popupClose");
-
-var popupOverlay =
-    document.getElementById("popupOverlay");
-
-var popupWhatsapp =
-    document.getElementById("popupWhatsapp");
-
-var popupTelegram =
-    document.getElementById("popupTelegram");
-
-var whatsappGroup =
-    document.getElementById("whatsappGroup");
-
-var telegramChannel =
-    document.getElementById("telegramChannel");
-
-var backTop =
-    document.getElementById("backTop");
-
-var year =
+const year =
     document.getElementById("year");
 
-var gameCards =
+
+/* =========================
+   YEAR
+========================= */
+
+year.textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   GROUP CHANNEL
+========================= */
+
+whatsappButton.addEventListener(
+    "click",
+    function () {
+
+        openLink(whatsappLink);
+
+    }
+);
+
+
+telegramChannelButton.addEventListener(
+    "click",
+    function () {
+
+        openLink(telegramChannelLink);
+
+    }
+);
+
+
+/* =========================
+   GAME LIST
+========================= */
+
+const gameCards =
     document.querySelectorAll(".game-card");
 
 
-/* ==================================================
+gameCards.forEach(function (card) {
+
+    card.addEventListener(
+        "click",
+        function () {
+
+            const gameName =
+                card.dataset.game;
+
+            openGameContact(gameName);
+
+        }
+    );
+
+});
+
+
+/* =========================
    OPEN GAME POPUP
-================================================== */
+========================= */
 
-function openGamePopup(gameName) {
+function openGameContact(gameName) {
 
-    if (!gamePopup) {
-        return;
+    modal.dataset.game =
+        gameName;
+
+    modalTitle.textContent =
+        gameName + " Support";
+
+    modalText.textContent =
+        "Pilih WhatsApp atau Telegram untuk bertanya mengenai " +
+        gameName +
+        ".";
+
+    modal.classList.add("active");
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+/* =========================
+   WHATSAPP SUPPORT
+========================= */
+
+modalWhatsapp.addEventListener(
+    "click",
+    function () {
+
+        openLink(whatsappLink);
+
     }
+);
 
-    if (popupGameName) {
 
-        popupGameName.textContent =
-            gameName;
+/* =========================
+   TELEGRAM SUPPORT
+========================= */
+
+modalTelegram.addEventListener(
+    "click",
+    function () {
+
+        openLink(telegramSupportLink);
 
     }
+);
 
-    if (popupGameText) {
 
-        popupGameText.textContent =
-            gameName;
+/* =========================
+   OPEN LINK
+========================= */
+
+function openLink(url) {
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
+
+/* =========================
+   CLOSE POPUP
+========================= */
+
+function closeContactModal() {
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow =
+        "";
+
+    delete modal.dataset.game;
+}
+
+
+closeModal.addEventListener(
+    "click",
+    function () {
+
+        closeContactModal();
 
     }
-
-    gamePopup.classList.add(
-        "active"
-    );
-
-    gamePopup.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-    document.body.classList.add(
-        "popup-open"
-    );
-
-}
+);
 
 
-/* ==================================================
-   CLOSE GAME POPUP
-================================================== */
+/* CLICK OUTSIDE POPUP */
 
-function closeGamePopup() {
-
-    if (!gamePopup) {
-        return;
-    }
-
-    gamePopup.classList.remove(
-        "active"
-    );
-
-    gamePopup.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    document.body.classList.remove(
-        "popup-open"
-    );
-
-}
-
-
-/* ==================================================
-   GAME CARD CLICK
-================================================== */
-
-for (
-    var i = 0;
-    i < gameCards.length;
-    i++
-) {
-
-    gameCards[i].addEventListener(
-        "click",
-        function () {
-
-            var gameName =
-                this.getAttribute(
-                    "data-game"
-                );
-
-            openGamePopup(
-                gameName
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   CLOSE POPUP BUTTON
-================================================== */
-
-if (popupClose) {
-
-    popupClose.addEventListener(
-        "click",
-        function () {
-
-            closeGamePopup();
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   CLICK OUTSIDE POPUP
-================================================== */
-
-if (popupOverlay) {
-
-    popupOverlay.addEventListener(
-        "click",
-        function () {
-
-            closeGamePopup();
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   ESC CLOSE
-================================================== */
-
-document.addEventListener(
-    "keydown",
+modal.addEventListener(
+    "click",
     function (event) {
 
-        if (event.key === "Escape") {
+        if (event.target === modal) {
 
-            closeGamePopup();
+            closeContactModal();
 
         }
 
@@ -233,164 +208,20 @@ document.addEventListener(
 );
 
 
-/* ==================================================
-   OPEN LINK
-================================================== */
+/* ESC KEY */
 
-function openOfficialLink(link) {
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-    if (!link || link === "#") {
-        return;
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+
+            closeContactModal();
+
+        }
+
     }
-
-    /*
-       Navigasi langsung lebih sesuai
-       untuk browser mobile.
-    */
-
-    window.location.href =
-        link;
-
-}
-
-
-/* ==================================================
-   WHATSAPP CUSTOMER SERVICE
-================================================== */
-
-if (popupWhatsapp) {
-
-    popupWhatsapp.addEventListener(
-        "click",
-        function () {
-
-            closeGamePopup();
-
-            openOfficialLink(
-                whatsappCustomerLink
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   TELEGRAM CUSTOMER SERVICE
-================================================== */
-
-if (popupTelegram) {
-
-    popupTelegram.addEventListener(
-        "click",
-        function () {
-
-            closeGamePopup();
-
-            openOfficialLink(
-                telegramCustomerLink
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   WHATSAPP GROUP / CHANNEL
-================================================== */
-
-if (whatsappGroup) {
-
-    whatsappGroup.addEventListener(
-        "click",
-        function () {
-
-            openOfficialLink(
-                whatsappGroupLink
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   TELEGRAM CHANNEL
-================================================== */
-
-if (telegramChannel) {
-
-    telegramChannel.addEventListener(
-        "click",
-        function () {
-
-            openOfficialLink(
-                telegramChannelLink
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   CURRENT YEAR
-================================================== */
-
-if (year) {
-
-    year.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* ==================================================
-   BACK TO TOP
-================================================== */
-
-if (backTop) {
-
-    window.addEventListener(
-        "scroll",
-        function () {
-
-            if (window.scrollY > 500) {
-
-                backTop.classList.add(
-                    "show"
-                );
-
-            } else {
-
-                backTop.classList.remove(
-                    "show"
-                );
-
-            }
-
-        }
-    );
-
-
-    backTop.addEventListener(
-        "click",
-        function () {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
-        }
-    );
-
-}
+);
