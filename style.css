@@ -10,21 +10,29 @@
     --muted: #667b8e;
 }
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     min-height: 100vh;
+
     overflow-x: hidden;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     color: var(--text);
 
     background:
@@ -45,35 +53,48 @@ body {
             #d4e0e8
         );
 
-    background-size: 180% 180%;
+    background-size:
+        180% 180%;
 
     animation:
-        bodyMove 12s ease-in-out infinite alternate;
+        bodyMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
 }
+
 
 @keyframes bodyMove {
 
     0% {
-        background-position: 0% 20%;
+        background-position:
+            0% 20%;
     }
 
     50% {
-        background-position: 55% 70%;
+        background-position:
+            55% 70%;
     }
 
     100% {
-        background-position: 100% 30%;
+        background-position:
+            100% 30%;
     }
+
 }
+
 
 body.popup-open {
     overflow: hidden;
 }
 
+
 a {
     color: inherit;
     text-decoration: none;
 }
+
 
 button {
     font-family: inherit;
@@ -82,8 +103,10 @@ button {
 
 /* ================= HEADER ================= */
 
+
 .header {
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
@@ -91,36 +114,51 @@ button {
     background:
         rgba(229,236,240,.90);
 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
 
     border-bottom:
-        1px solid rgba(105,133,154,.25);
+        1px solid
+        rgba(105,133,154,.25);
 
     box-shadow:
-        0 4px 22px rgba(30,55,80,.08);
+        0 4px 22px
+        rgba(30,55,80,.08);
 }
+
 
 .header-inner {
-    width: min(1100px,100%);
+    width:
+        min(1100px,100%);
+
     margin: auto;
 
-    padding: 10px 18px;
+    padding:
+        10px 18px;
 
     display: flex;
+
     align-items: center;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
 }
+
 
 .brand {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 }
 
 
-/* ================= HEADER LOGO ================= */
+/* ================= MAIN LOGO ================= */
+
 
 .brand-logo {
     width: 56px;
@@ -129,7 +167,9 @@ button {
     position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -142,24 +182,35 @@ button {
         );
 
     box-shadow:
-        0 4px 15px rgba(165,113,22,.24),
-        0 0 10px rgba(225,187,93,.15);
+        0 4px 15px
+        rgba(165,113,22,.24),
+        0 0 10px
+        rgba(225,187,93,.15);
 
     animation:
-        logoFloat 3.8s ease-in-out infinite;
+        logoFloat
+        3.8s
+        ease-in-out
+        infinite;
 }
 
+
 .brand-logo img {
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
+    width:
+        calc(100% - 4px);
+
+    height:
+        calc(100% - 4px);
 
     position: relative;
+
     z-index: 4;
 
     object-fit: cover;
 
     border-radius: 50%;
 }
+
 
 .logo-ring {
     position: absolute;
@@ -171,41 +222,57 @@ button {
     border-radius: 50%;
 
     border:
-        1px solid rgba(191,137,31,.60);
+        1px solid
+        rgba(191,137,31,.60);
 
     animation:
-        logoPulse 3s ease-out infinite;
+        logoPulse
+        3s
+        ease-out
+        infinite;
 }
+
 
 .logo-ring.ring-two {
     animation-delay: 1.5s;
 }
 
+
 @keyframes logoPulse {
 
     0% {
-        transform: scale(.90);
+        transform:
+            scale(.90);
+
         opacity: .65;
     }
 
     70%,
     100% {
-        transform: scale(1.28);
+        transform:
+            scale(1.28);
+
         opacity: 0;
     }
+
 }
+
 
 @keyframes logoFloat {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-4px);
+        transform:
+            translateY(-4px);
     }
+
 }
+
 
 .brand-info strong {
     display: block;
@@ -213,29 +280,36 @@ button {
     color: var(--navy);
 
     font-size: 21px;
+
     font-weight: 900;
 }
+
 
 .brand-info span {
     display: block;
 
     margin-top: 2px;
 
-    color: var(--gold-dark);
+    color:
+        var(--gold-dark);
 
     font-size: 7px;
+
     font-weight: 900;
 
     letter-spacing: 2.2px;
 }
 
+
 .online {
     display: flex;
+
     align-items: center;
 
     gap: 7px;
 
-    padding: 9px 13px;
+    padding:
+        9px 13px;
 
     border-radius: 30px;
 
@@ -245,11 +319,14 @@ button {
         rgba(255,255,255,.58);
 
     border:
-        1px solid rgba(117,143,160,.25);
+        1px solid
+        rgba(117,143,160,.25);
 
     font-size: 9px;
+
     font-weight: 900;
 }
+
 
 .online span {
     width: 8px;
@@ -260,44 +337,59 @@ button {
     background: #20c977;
 
     animation:
-        onlinePulse 1.6s ease-in-out infinite;
+        onlinePulse
+        1.6s
+        ease-in-out
+        infinite;
 }
+
 
 @keyframes onlinePulse {
 
     0%,
     100% {
+
         box-shadow:
             0 0 4px #20c977;
 
-        transform: scale(.9);
+        transform:
+            scale(.9);
     }
 
     50% {
+
         box-shadow:
             0 0 6px #20c977,
-            0 0 13px rgba(32,201,119,.70);
+            0 0 13px
+            rgba(32,201,119,.70);
 
-        transform: scale(1.12);
+        transform:
+            scale(1.12);
     }
+
 }
 
 
 /* ================= HERO ================= */
 
+
 .hero {
     min-height: 360px;
 
     position: relative;
+
     isolation: isolate;
 
     overflow: hidden;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 40px 20px 52px;
+    padding:
+        40px 20px 52px;
 
     text-align: center;
 
@@ -311,29 +403,39 @@ button {
             #d1e0e9 100%
         );
 
-    background-size: 300% 300%;
+    background-size:
+        300% 300%;
 
     animation:
-        heroGradient 9s ease-in-out infinite;
+        heroGradient
+        9s
+        ease-in-out
+        infinite;
 }
+
 
 @keyframes heroGradient {
 
     0% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position:
+            100% 50%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position:
+            0% 50%;
     }
+
 }
 
 
 /* ================= AURORA ================= */
+
 
 .aurora {
     position: absolute;
@@ -342,10 +444,12 @@ button {
 
     border-radius: 50%;
 
-    filter: blur(38px);
+    filter:
+        blur(38px);
 
     pointer-events: none;
 }
+
 
 .aurora-one {
     width: 330px;
@@ -358,8 +462,13 @@ button {
         rgba(57,132,190,.30);
 
     animation:
-        auroraOne 8s ease-in-out infinite alternate;
+        auroraOne
+        8s
+        ease-in-out
+        infinite
+        alternate;
 }
+
 
 .aurora-two {
     width: 380px;
@@ -372,8 +481,13 @@ button {
         rgba(218,177,81,.22);
 
     animation:
-        auroraTwo 10s ease-in-out infinite alternate;
+        auroraTwo
+        10s
+        ease-in-out
+        infinite
+        alternate;
 }
+
 
 .aurora-three {
     width: 260px;
@@ -386,8 +500,13 @@ button {
         rgba(255,255,255,.65);
 
     animation:
-        auroraThree 7s ease-in-out infinite alternate;
+        auroraThree
+        7s
+        ease-in-out
+        infinite
+        alternate;
 }
+
 
 @keyframes auroraOne {
 
@@ -402,7 +521,9 @@ button {
             translate(180px,100px)
             scale(1.25);
     }
+
 }
+
 
 @keyframes auroraTwo {
 
@@ -417,7 +538,9 @@ button {
             translate(-190px,-90px)
             scale(1.20);
     }
+
 }
+
 
 @keyframes auroraThree {
 
@@ -432,10 +555,12 @@ button {
             translate(120px,-70px)
             scale(1.25);
     }
+
 }
 
 
 /* ================= LIGHT BEAM ================= */
+
 
 .light-beam {
     position: absolute;
@@ -449,10 +574,13 @@ button {
 
     pointer-events: none;
 
-    transform: rotate(22deg);
+    transform:
+        rotate(22deg);
 
-    filter: blur(10px);
+    filter:
+        blur(10px);
 }
+
 
 .beam-one {
     left: -70%;
@@ -468,8 +596,12 @@ button {
         );
 
     animation:
-        beamMove 8s ease-in-out infinite;
+        beamMove
+        8s
+        ease-in-out
+        infinite;
 }
+
 
 .beam-two {
     left: -100%;
@@ -484,8 +616,13 @@ button {
         );
 
     animation:
-        beamMove 11s ease-in-out 3s infinite;
+        beamMove
+        11s
+        ease-in-out
+        3s
+        infinite;
 }
+
 
 @keyframes beamMove {
 
@@ -497,10 +634,12 @@ button {
     100% {
         left: 130%;
     }
+
 }
 
 
 /* ================= ORBS ================= */
+
 
 .floating-orb {
     position: absolute;
@@ -512,7 +651,8 @@ button {
     pointer-events: none;
 
     border:
-        1px solid rgba(255,255,255,.45);
+        1px solid
+        rgba(255,255,255,.45);
 
     background:
         linear-gradient(
@@ -522,6 +662,7 @@ button {
         );
 }
 
+
 .orb-one {
     width: 75px;
     height: 75px;
@@ -530,8 +671,12 @@ button {
     bottom: 12%;
 
     animation:
-        orbOne 7s ease-in-out infinite;
+        orbOne
+        7s
+        ease-in-out
+        infinite;
 }
+
 
 .orb-two {
     width: 42px;
@@ -541,8 +686,12 @@ button {
     top: 18%;
 
     animation:
-        orbTwo 6s ease-in-out infinite;
+        orbTwo
+        6s
+        ease-in-out
+        infinite;
 }
+
 
 .orb-three {
     width: 25px;
@@ -552,8 +701,12 @@ button {
     bottom: 14%;
 
     animation:
-        orbThree 5s ease-in-out infinite;
+        orbThree
+        5s
+        ease-in-out
+        infinite;
 }
+
 
 @keyframes orbOne {
 
@@ -561,7 +714,9 @@ button {
         transform:
             translate(35px,-30px);
     }
+
 }
+
 
 @keyframes orbTwo {
 
@@ -569,7 +724,9 @@ button {
         transform:
             translate(-25px,35px);
     }
+
 }
+
 
 @keyframes orbThree {
 
@@ -578,10 +735,12 @@ button {
             translateY(-35px)
             scale(1.15);
     }
+
 }
 
 
-/* ================= SPARKS ================= */
+/* ================= SPARK ================= */
+
 
 .spark {
     position: absolute;
@@ -594,51 +753,68 @@ button {
     background: #c99b3f;
 
     box-shadow:
-        0 0 7px rgba(201,155,63,.60);
+        0 0 7px
+        rgba(201,155,63,.60);
 
     animation:
-        sparkFloat 5s ease-in-out infinite;
+        sparkFloat
+        5s
+        ease-in-out
+        infinite;
 }
+
 
 .spark-1 {
     left: 10%;
     top: 22%;
 }
 
+
 .spark-2 {
     left: 18%;
     top: 67%;
+
     animation-delay: 1s;
 }
+
 
 .spark-3 {
     left: 32%;
     top: 18%;
+
     animation-delay: 2.4s;
 }
+
 
 .spark-4 {
     right: 10%;
     top: 30%;
+
     animation-delay: .7s;
 }
+
 
 .spark-5 {
     right: 19%;
     bottom: 18%;
+
     animation-delay: 3s;
 }
+
 
 .spark-6 {
     right: 34%;
     top: 16%;
+
     animation-delay: 1.8s;
 }
+
 
 @keyframes sparkFloat {
 
     0%,
     100% {
+
         opacity: .15;
 
         transform:
@@ -647,16 +823,19 @@ button {
     }
 
     50% {
+
         opacity: .8;
 
         transform:
             translateY(-20px)
             scale(1.15);
     }
+
 }
 
 
-/* ================= HERO CONTENT ================= */
+/* ================= HERO TEXT ================= */
+
 
 .hero-content {
     width: 100%;
@@ -665,6 +844,7 @@ button {
 
     z-index: 10;
 }
+
 
 .hero h1 {
     color: var(--navy);
@@ -678,6 +858,7 @@ button {
 
     letter-spacing: -2px;
 }
+
 
 .hero h1 span {
     display: block;
@@ -699,21 +880,30 @@ button {
     background-size:
         250% 100%;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
 
     color: transparent;
 
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color:
+        transparent;
 
     animation:
-        goldText 9s linear infinite;
+        goldText
+        9s
+        linear
+        infinite;
 
     filter:
         drop-shadow(
-            0 3px 8px rgba(132,91,20,.18)
+            0 3px 8px
+            rgba(132,91,20,.18)
         );
 }
+
 
 @keyframes goldText {
 
@@ -726,18 +916,23 @@ button {
         background-position:
             -200% center;
     }
+
 }
+
 
 .gold-line {
     width: 180px;
 
-    margin: 22px auto;
+    margin:
+        22px auto;
 
     display: flex;
+
     align-items: center;
 
     gap: 9px;
 }
+
 
 .gold-line span {
     flex: 1;
@@ -752,7 +947,9 @@ button {
         );
 }
 
+
 .gold-line span:last-child {
+
     background:
         linear-gradient(
             90deg,
@@ -761,35 +958,44 @@ button {
         );
 }
 
+
 .gold-line b {
     color: var(--gold);
 
     font-size: 7px;
 }
 
+
 .hero p {
     color: #60768a;
 
     font-size: 13px;
+
     font-weight: 600;
 }
 
+
 .hero p b {
-    margin: 0 7px;
+    margin:
+        0 7px;
 
     color: var(--gold);
 }
 
 
-/* ================= SECTIONS ================= */
+/* ================= SECTION ================= */
+
 
 .section {
-    width: min(1000px,100%);
+    width:
+        min(1000px,100%);
 
     margin: auto;
 
-    padding: 55px 18px;
+    padding:
+        55px 18px;
 }
+
 
 .section-heading {
     margin-bottom: 27px;
@@ -797,27 +1003,33 @@ button {
     text-align: center;
 }
 
+
 .mini-title {
     display: block;
 
     margin-bottom: 6px;
 
-    color: var(--gold-dark);
+    color:
+        var(--gold-dark);
 
     font-size: 7px;
+
     font-weight: 900;
 
     letter-spacing: 2.5px;
 }
 
+
 .section-heading h2 {
-    color: var(--navy);
+    color:
+        var(--navy);
 
     font-size:
         clamp(25px,5vw,35px);
 
     font-weight: 900;
 }
+
 
 .heading-line {
     width: 45px;
@@ -837,6 +1049,7 @@ button {
 
 /* ================= PROMO ================= */
 
+
 .promo-grid {
     display: grid;
 
@@ -846,17 +1059,21 @@ button {
     gap: 12px;
 }
 
+
 .promo-card {
     min-height: 185px;
 
     position: relative;
 
-    padding: 23px 15px;
+    padding:
+        23px 15px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -867,13 +1084,17 @@ button {
         rgba(244,248,249,.78);
 
     border:
-        1px solid rgba(118,145,163,.28);
+        1px solid
+        rgba(118,145,163,.28);
 
     box-shadow:
-        0 12px 30px rgba(30,55,80,.08);
+        0 12px 30px
+        rgba(30,55,80,.08);
 
-    transition: .3s;
+    transition:
+        .3s ease;
 }
+
 
 .promo-card:hover {
     transform:
@@ -883,6 +1104,7 @@ button {
         rgba(197,149,54,.50);
 }
 
+
 .promo-icon {
     width: 45px;
     height: 45px;
@@ -890,7 +1112,9 @@ button {
     margin-bottom: 13px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -905,30 +1129,40 @@ button {
     font-size: 21px;
 }
 
+
 .promo-card > span {
     color: var(--navy);
 
     font-size: 10px;
+
     font-weight: 900;
 }
+
 
 .promo-card > strong {
+    display: block;
+
     margin-top: 9px;
 
-    color: var(--gold-dark);
+    color:
+        var(--gold-dark);
 
     font-size: 32px;
+
     font-weight: 900;
 }
+
 
 .promo-card > strong.text-value {
     font-size: 15px;
 }
 
+
 .weekly {
     border-color:
         rgba(197,149,54,.45);
 }
+
 
 .promo-tag {
     position: absolute;
@@ -936,7 +1170,8 @@ button {
     right: 0;
     top: 0;
 
-    padding: 6px 10px;
+    padding:
+        6px 10px;
 
     border-radius:
         0 19px 0 12px;
@@ -951,11 +1186,13 @@ button {
         );
 
     font-size: 6px;
+
     font-weight: 900;
 }
 
 
 /* ================= CHANNEL ================= */
+
 
 .channel-grid {
     max-width: 760px;
@@ -970,12 +1207,14 @@ button {
     gap: 12px;
 }
 
+
 .channel-card {
     width: 100%;
 
     min-height: 95px;
 
     display: flex;
+
     align-items: center;
 
     gap: 14px;
@@ -985,7 +1224,8 @@ button {
     border-radius: 18px;
 
     border:
-        1px solid rgba(118,145,163,.28);
+        1px solid
+        rgba(118,145,163,.28);
 
     cursor: pointer;
 
@@ -994,84 +1234,103 @@ button {
     background:
         rgba(244,248,249,.80);
 
-    transition: .3s;
+    box-shadow:
+        0 12px 30px
+        rgba(31,51,73,.07);
+
+    transition:
+        .3s ease;
 }
+
 
 .channel-card:hover {
     transform:
         translateY(-4px);
+
+    border-color:
+        rgba(197,149,54,.45);
 }
 
+
+/* REAL WHATSAPP / TELEGRAM LOGO */
+
+
 .channel-icon {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
 
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    border-radius: 16px;
+    border-radius: 50%;
 
-    color: white;
+    background: transparent;
 
-    font-size: 20px;
-    font-weight: 900;
+    overflow: hidden;
 }
 
-.whatsapp-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #2ad573,
-            #07974b
-        );
+
+.channel-icon img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    pointer-events: none;
 }
 
-.telegram-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #35afe9,
-            #1375b5
-        );
-}
 
 .channel-info span {
     display: block;
 
     margin-bottom: 4px;
 
-    color: var(--gold-dark);
+    color:
+        var(--gold-dark);
 
     font-size: 7px;
+
     font-weight: 900;
+
+    letter-spacing: 1.4px;
 }
 
+
 .channel-info strong {
+    display: block;
+
     color: var(--navy);
 
     font-size: 12px;
+
     font-weight: 900;
 }
+
 
 .arrow {
     margin-left: auto;
 
-    color: var(--gold-dark);
+    color:
+        var(--gold-dark);
 
     font-size: 23px;
 }
 
 
-/* ==================================================
-   GAME LIST WITH REAL LOGOS
-================================================== */
+/* ================= GAME ================= */
+
 
 .game-section {
     padding-bottom: 75px;
 }
+
 
 .game-grid {
     display: grid;
@@ -1082,25 +1341,28 @@ button {
     gap: 12px;
 }
 
+
 .game-card {
     width: 100%;
 
     min-height: 150px;
 
-    position: relative;
-
-    padding: 17px 8px;
+    padding:
+        17px 8px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 19px;
 
     border:
-        1px solid rgba(118,145,163,.28);
+        1px solid
+        rgba(118,145,163,.28);
 
     outline: none;
 
@@ -1114,16 +1376,16 @@ button {
         );
 
     box-shadow:
-        0 10px 28px rgba(31,51,73,.08);
+        0 10px 28px
+        rgba(31,51,73,.08);
 
     transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+        .3s ease;
 
     -webkit-tap-highlight-color:
         transparent;
 }
+
 
 .game-card:hover {
     transform:
@@ -1133,8 +1395,10 @@ button {
         rgba(197,149,54,.60);
 
     box-shadow:
-        0 15px 32px rgba(31,51,73,.12);
+        0 15px 32px
+        rgba(31,51,73,.12);
 }
+
 
 .game-card:active {
     transform:
@@ -1142,18 +1406,16 @@ button {
 }
 
 
-/* LOGO CONTAINER */
-
 .game-logo {
     width: 82px;
     height: 82px;
 
     margin-bottom: 12px;
 
-    position: relative;
-
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 20px;
@@ -1166,30 +1428,18 @@ button {
         );
 
     border:
-        1px solid rgba(197,149,54,.40);
+        1px solid
+        rgba(197,149,54,.40);
 
     box-shadow:
-        0 8px 20px rgba(20,57,90,.10),
-        inset 0 1px 0 rgba(255,255,255,.90);
+        0 8px 20px
+        rgba(20,57,90,.10);
 
     overflow: hidden;
 
     pointer-events: none;
-
-    transition: .3s ease;
 }
 
-.game-card:hover .game-logo {
-    border-color:
-        rgba(197,149,54,.80);
-
-    box-shadow:
-        0 9px 23px rgba(20,57,90,.14),
-        0 0 12px rgba(197,149,54,.10);
-}
-
-
-/* ACTUAL IMAGE */
 
 .game-logo img {
     width: 90%;
@@ -1202,30 +1452,31 @@ button {
     pointer-events: none;
 
     transition:
-        transform .35s ease;
+        .35s ease;
 }
 
-.game-card:hover .game-logo img {
+
+.game-card:hover
+.game-logo img {
+
     transform:
         scale(1.06);
 }
 
 
-/* GAME NAME */
-
 .game-card strong {
     color: var(--navy);
 
     font-size: 10px;
-    font-weight: 900;
 
-    letter-spacing: .25px;
+    font-weight: 900;
 
     pointer-events: none;
 }
 
 
 /* ================= POPUP ================= */
+
 
 .game-popup {
     position: fixed;
@@ -1237,39 +1488,55 @@ button {
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 18px;
 }
 
+
 .game-popup.active {
     display: flex;
 }
+
 
 .popup-overlay {
     position: absolute;
 
     inset: 0;
 
+    z-index: 1;
+
     background:
         rgba(28,52,76,.25);
 
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
 }
 
+
 .support-modal {
-    width: min(580px,100%);
+    width:
+        min(580px,100%);
 
     position: relative;
 
     z-index: 2;
 
-    padding: 31px 32px 34px;
+    padding:
+        31px 32px 34px;
 
     border-radius: 25px;
 
     background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(73,119,164,.10),
+            transparent 34%
+        ),
         linear-gradient(
             145deg,
             #e5ebef,
@@ -1278,14 +1545,19 @@ button {
         );
 
     border:
-        1.5px solid rgba(197,149,54,.90);
+        1.5px solid
+        rgba(197,149,54,.90);
 
     box-shadow:
-        0 28px 70px rgba(17,38,59,.32);
+        0 28px 70px
+        rgba(17,38,59,.32);
 
     animation:
-        popupIn .25s ease;
+        popupIn
+        .25s
+        ease;
 }
+
 
 @keyframes popupIn {
 
@@ -1304,7 +1576,9 @@ button {
             translateY(0)
             scale(1);
     }
+
 }
+
 
 .support-close {
     position: absolute;
@@ -1315,10 +1589,17 @@ button {
     width: 45px;
     height: 45px;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     border-radius: 50%;
 
     border:
-        1px solid rgba(181,130,27,.70);
+        1px solid
+        rgba(181,130,27,.70);
 
     cursor: pointer;
 
@@ -1330,18 +1611,23 @@ button {
     font-size: 25px;
 }
 
+
 .support-brand {
     padding-right: 55px;
 
     display: flex;
+
     align-items: center;
 
     gap: 14px;
 }
 
+
 .support-brand-logo {
     width: 65px;
     height: 65px;
+
+    flex-shrink: 0;
 
     padding: 2px;
 
@@ -1355,14 +1641,18 @@ button {
         );
 }
 
+
 .support-brand-logo img {
     width: 100%;
     height: 100%;
+
+    display: block;
 
     object-fit: cover;
 
     border-radius: 50%;
 }
+
 
 .support-brand-text strong {
     display: block;
@@ -1370,8 +1660,10 @@ button {
     color: #ad760e;
 
     font-size: 21px;
+
     font-weight: 900;
 }
+
 
 .support-brand-text span {
     display: block;
@@ -1383,16 +1675,20 @@ button {
     font-size: 12px;
 }
 
+
 .support-content {
     margin-top: 31px;
 }
+
 
 .support-content h2 {
     color: #0e315a;
 
     font-size: 27px;
+
     font-weight: 900;
 }
+
 
 .support-content p {
     margin-top: 9px;
@@ -1404,6 +1700,12 @@ button {
     line-height: 1.6;
 }
 
+
+.support-content p strong {
+    color: #294c70;
+}
+
+
 .support-options {
     margin-top: 26px;
 
@@ -1412,14 +1714,17 @@ button {
     gap: 13px;
 }
 
+
 .support-option {
     width: 100%;
 
     min-height: 86px;
 
-    padding: 14px 18px;
+    padding:
+        14px 18px;
 
     display: flex;
+
     align-items: center;
 
     gap: 16px;
@@ -1429,7 +1734,8 @@ button {
     border-radius: 17px;
 
     border:
-        1px solid rgba(190,137,31,.70);
+        1px solid
+        rgba(190,137,31,.70);
 
     cursor: pointer;
 
@@ -1440,13 +1746,28 @@ button {
             rgba(225,232,237,.86)
         );
 
-    transition: .25s;
+    transition:
+        .25s ease;
 }
+
 
 .support-option:hover {
     transform:
         translateY(-2px);
+
+    border-color:
+        #b67e13;
 }
+
+
+.support-option:active {
+    transform:
+        scale(.98);
+}
+
+
+/* WHATSAPP / TELEGRAM POPUP ICON */
+
 
 .support-option-icon {
     width: 54px;
@@ -1455,19 +1776,32 @@ button {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    color: #b17a0c;
+    background: transparent;
 
-    border:
-        1.5px solid #bc8519;
+    border: none;
 
-    font-size: 12px;
-    font-weight: 900;
+    overflow: hidden;
 }
+
+
+.support-option-icon img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
 
 .support-option-text strong {
     display: block;
@@ -1475,8 +1809,10 @@ button {
     color: #123764;
 
     font-size: 17px;
+
     font-weight: 900;
 }
+
 
 .support-option-text span {
     display: block;
@@ -1487,6 +1823,7 @@ button {
 
     font-size: 11px;
 }
+
 
 .support-arrow {
     margin-left: auto;
@@ -1499,8 +1836,10 @@ button {
 
 /* ================= FOOTER ================= */
 
+
 footer {
-    padding: 35px 20px 30px;
+    padding:
+        35px 20px 30px;
 
     text-align: center;
 
@@ -1514,8 +1853,10 @@ footer {
         );
 
     border-top:
-        2px solid var(--gold);
+        2px solid
+        var(--gold);
 }
+
 
 .footer-logo {
     width: 62px;
@@ -1536,6 +1877,7 @@ footer {
         );
 }
 
+
 .footer-logo img {
     width: 100%;
     height: 100%;
@@ -1545,24 +1887,31 @@ footer {
     border-radius: 50%;
 }
 
+
 footer > strong {
     display: block;
 
     font-size: 19px;
+
     font-weight: 900;
 }
+
 
 footer > span {
     display: block;
 
     margin-top: 3px;
 
-    color: var(--gold-light);
+    color:
+        var(--gold-light);
 
     font-size: 7px;
 
+    font-weight: 900;
+
     letter-spacing: 2px;
 }
+
 
 footer p {
     margin-top: 16px;
@@ -1574,6 +1923,7 @@ footer p {
 
 
 /* ================= BACK TOP ================= */
+
 
 .back-top {
     position: fixed;
@@ -1587,7 +1937,8 @@ footer p {
     height: 42px;
 
     border:
-        2px solid var(--gold-light);
+        2px solid
+        var(--gold-light);
 
     border-radius: 50%;
 
@@ -1602,8 +1953,10 @@ footer p {
 
     visibility: hidden;
 
-    transition: .3s;
+    transition:
+        .3s ease;
 }
+
 
 .back-top.show {
     opacity: 1;
@@ -1614,203 +1967,403 @@ footer p {
 
 /* ================= TABLET ================= */
 
+
 @media (max-width: 800px) {
 
     .promo-grid {
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
+
     .game-grid {
+
         grid-template-columns:
             repeat(3,1fr);
+
     }
+
 }
 
 
 /* ================= MOBILE ================= */
 
+
 @media (max-width: 500px) {
 
+
     .header-inner {
+
         padding:
             8px 13px;
+
     }
+
 
     .brand-logo {
+
         width: 48px;
         height: 48px;
+
     }
+
 
     .brand-info strong {
+
         font-size: 17px;
+
     }
+
 
     .brand-info span {
+
         font-size: 6px;
+
+        letter-spacing:
+            1.5px;
+
     }
 
+
     .online {
+
         padding:
             7px 10px;
 
         font-size: 8px;
+
     }
 
 
     .hero {
+
         min-height: 300px;
 
         padding:
             30px 15px 40px;
+
     }
+
 
     .hero h1 {
+
         font-size: 38px;
+
+        letter-spacing:
+            -1.5px;
+
     }
 
+
+    .hero h1 span {
+
+        margin-top: 8px;
+
+    }
+
+
+    .gold-line {
+
+        width: 150px;
+
+        margin:
+            17px auto;
+
+    }
+
+
     .hero p {
+
         font-size: 10px;
+
     }
 
 
     .section {
+
         padding:
             44px 14px;
+
     }
 
+
+    .section-heading {
+
+        margin-bottom: 21px;
+
+    }
+
+
     .section-heading h2 {
+
         font-size: 25px;
+
     }
 
 
     .promo-grid {
+
         grid-template-columns:
             repeat(2,1fr);
 
         gap: 9px;
+
     }
 
+
     .promo-card {
+
         min-height: 160px;
 
         padding:
             17px 8px;
+
+        border-radius: 17px;
+
     }
+
+
+    .promo-icon {
+
+        width: 39px;
+        height: 39px;
+
+        margin-bottom: 10px;
+
+        font-size: 18px;
+
+    }
+
+
+    .promo-card > span {
+
+        font-size: 8px;
+
+    }
+
 
     .promo-card > strong {
+
+        margin-top: 7px;
+
         font-size: 27px;
+
     }
 
-    .promo-card > strong.text-value {
+
+    .promo-card >
+    strong.text-value {
+
         font-size: 12px;
+
     }
 
 
     .channel-grid {
+
         grid-template-columns:
             1fr;
+
     }
 
 
-    /* GAME MOBILE */
+    .channel-card {
+
+        min-height: 80px;
+
+        padding: 14px;
+
+    }
+
+
+    .channel-icon {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
 
     .game-grid {
+
         grid-template-columns:
             repeat(3,1fr);
 
         gap: 8px;
+
     }
 
+
     .game-card {
+
         min-height: 125px;
 
         padding:
             11px 5px;
 
         border-radius: 16px;
+
     }
 
+
     .game-logo {
+
         width: 66px;
         height: 66px;
 
         margin-bottom: 9px;
 
         border-radius: 16px;
+
     }
+
 
     .game-logo img {
+
         width: 92%;
         height: 92%;
+
     }
+
 
     .game-card strong {
+
         font-size: 8px;
+
     }
 
-
-    /* POPUP */
 
     .game-popup {
+
         padding: 14px;
+
     }
+
 
     .support-modal {
+
         padding:
             25px 19px 22px;
+
+        border-radius: 22px;
+
     }
 
+
     .support-close {
+
         top: 15px;
         right: 15px;
 
         width: 40px;
         height: 40px;
+
+        font-size: 22px;
+
     }
+
+
+    .support-brand {
+
+        gap: 11px;
+
+        padding-right: 47px;
+
+    }
+
 
     .support-brand-logo {
+
         width: 57px;
         height: 57px;
+
     }
+
 
     .support-brand-text strong {
+
         font-size: 18px;
+
     }
+
 
     .support-brand-text span {
+
         font-size: 10px;
+
     }
+
 
     .support-content {
+
         margin-top: 27px;
+
     }
+
 
     .support-content h2 {
+
         font-size: 23px;
+
     }
+
 
     .support-content p {
+
         font-size: 11px;
+
     }
 
+
+    .support-options {
+
+        margin-top: 21px;
+
+        gap: 11px;
+
+    }
+
+
     .support-option {
+
         min-height: 76px;
 
         padding:
             12px 14px;
+
+        gap: 13px;
+
     }
+
 
     .support-option-icon {
+
         width: 48px;
         height: 48px;
+
     }
+
 
     .support-option-text strong {
+
         font-size: 15px;
+
     }
 
+
     .support-option-text span {
+
         font-size: 9px;
+
     }
+
+
+    .support-arrow {
+
+        font-size: 24px;
+
+    }
+
 }
