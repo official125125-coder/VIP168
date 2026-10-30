@@ -3,97 +3,155 @@
 ========================================== */
 
 
+/* ================= WHATSAPP ================= */
+
+var whatsappNumber =
+    "601137185849";
+
+var whatsappMessage =
+    "Hi Vip168, saya nak joint";
+
+
 /* CUSTOMER SERVICE */
 
 var whatsappCustomerLink =
-    "https://wa.me/qr/Y5HNIWJKBKANN1";
-
-var telegramCustomerLink =
-    "https://t.me/Vip_168_cs";
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+        whatsappMessage
+    );
 
 
 /* GROUP / CHANNEL */
 
 var whatsappGroupLink =
-    "https://wa.me/qr/Y5HNIWJKBKANN1";
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+        whatsappMessage
+    );
+
+
+/* ================= TELEGRAM ================= */
+
+var telegramCustomerLink =
+    "https://t.me/Vip_168_cs";
 
 var telegramChannelLink =
     "https://t.me/VIP168_Channel";
 
 
-/* ELEMENTS */
+/* ================= ELEMENT ================= */
 
 var gamePopup =
-    document.getElementById("gamePopup");
+    document.getElementById(
+        "gamePopup"
+    );
 
 var popupGameName =
-    document.getElementById("popupGameName");
+    document.getElementById(
+        "popupGameName"
+    );
 
 var popupGameText =
-    document.getElementById("popupGameText");
+    document.getElementById(
+        "popupGameText"
+    );
 
 var popupClose =
-    document.getElementById("popupClose");
+    document.getElementById(
+        "popupClose"
+    );
 
 var popupOverlay =
-    document.getElementById("popupOverlay");
+    document.getElementById(
+        "popupOverlay"
+    );
 
 var popupWhatsapp =
-    document.getElementById("popupWhatsapp");
+    document.getElementById(
+        "popupWhatsapp"
+    );
 
 var popupTelegram =
-    document.getElementById("popupTelegram");
+    document.getElementById(
+        "popupTelegram"
+    );
 
 var whatsappGroup =
-    document.getElementById("whatsappGroup");
+    document.getElementById(
+        "whatsappGroup"
+    );
 
 var telegramChannel =
-    document.getElementById("telegramChannel");
+    document.getElementById(
+        "telegramChannel"
+    );
 
 var backTop =
-    document.getElementById("backTop");
+    document.getElementById(
+        "backTop"
+    );
 
 var year =
-    document.getElementById("year");
+    document.getElementById(
+        "year"
+    );
 
 var gameCards =
-    document.querySelectorAll(".game-card");
+    document.querySelectorAll(
+        ".game-card"
+    );
 
 
-/* OPEN POPUP */
+/* ================= OPEN GAME POPUP ================= */
 
-function openGamePopup(gameName) {
+function openGamePopup(
+    gameName
+) {
 
     if (!gamePopup) {
         return;
     }
 
+
     if (popupGameName) {
+
         popupGameName.textContent =
             gameName;
+
     }
 
+
     if (popupGameText) {
+
         popupGameText.textContent =
             gameName;
+
     }
+
 
     gamePopup.classList.add(
         "active"
     );
+
 
     gamePopup.setAttribute(
         "aria-hidden",
         "false"
     );
 
+
     document.body.classList.add(
         "popup-open"
     );
+
 }
 
 
-/* CLOSE POPUP */
+/* ================= CLOSE POPUP ================= */
 
 function closeGamePopup() {
 
@@ -101,22 +159,26 @@ function closeGamePopup() {
         return;
     }
 
+
     gamePopup.classList.remove(
         "active"
     );
+
 
     gamePopup.setAttribute(
         "aria-hidden",
         "true"
     );
 
+
     document.body.classList.remove(
         "popup-open"
     );
+
 }
 
 
-/* GAME CARD */
+/* ================= GAME CLICK ================= */
 
 for (
     var i = 0;
@@ -133,6 +195,7 @@ for (
                     "data-game"
                 );
 
+
             openGamePopup(
                 gameName
             );
@@ -143,37 +206,48 @@ for (
 }
 
 
-/* CLOSE BUTTON */
+/* ================= CLOSE BUTTON ================= */
 
 if (popupClose) {
 
     popupClose.addEventListener(
         "click",
-        closeGamePopup
+        function () {
+
+            closeGamePopup();
+
+        }
     );
 
 }
 
 
-/* CLICK OUTSIDE */
+/* ================= OVERLAY ================= */
 
 if (popupOverlay) {
 
     popupOverlay.addEventListener(
         "click",
-        closeGamePopup
+        function () {
+
+            closeGamePopup();
+
+        }
     );
 
 }
 
 
-/* ESC */
+/* ================= ESC ================= */
 
 document.addEventListener(
     "keydown",
     function (event) {
 
-        if (event.key === "Escape") {
+        if (
+            event.key ===
+            "Escape"
+        ) {
 
             closeGamePopup();
 
@@ -183,29 +257,36 @@ document.addEventListener(
 );
 
 
-/* OPEN OFFICIAL LINK */
+/* ================= OPEN LINK ================= */
 
-function openOfficialLink(link) {
+function openOfficialLink(
+    link
+) {
 
-    if (!link || link === "#") {
+    if (
+        !link ||
+        link === "#"
+    ) {
         return;
     }
 
-    window.open(
-        link,
-        "_blank",
-        "noopener,noreferrer"
-    );
+
+    window.location.href =
+        link;
+
 }
 
 
-/* WHATSAPP CUSTOMER SERVICE */
+/* ================= WHATSAPP CS ================= */
 
 if (popupWhatsapp) {
 
     popupWhatsapp.addEventListener(
         "click",
         function () {
+
+            closeGamePopup();
+
 
             openOfficialLink(
                 whatsappCustomerLink
@@ -217,13 +298,16 @@ if (popupWhatsapp) {
 }
 
 
-/* TELEGRAM CUSTOMER SERVICE */
+/* ================= TELEGRAM CS ================= */
 
 if (popupTelegram) {
 
     popupTelegram.addEventListener(
         "click",
         function () {
+
+            closeGamePopup();
+
 
             openOfficialLink(
                 telegramCustomerLink
@@ -235,7 +319,7 @@ if (popupTelegram) {
 }
 
 
-/* WHATSAPP CHANNEL */
+/* ================= WHATSAPP CHANNEL ================= */
 
 if (whatsappGroup) {
 
@@ -253,7 +337,7 @@ if (whatsappGroup) {
 }
 
 
-/* TELEGRAM CHANNEL */
+/* ================= TELEGRAM CHANNEL ================= */
 
 if (telegramChannel) {
 
@@ -271,7 +355,7 @@ if (telegramChannel) {
 }
 
 
-/* YEAR */
+/* ================= YEAR ================= */
 
 if (year) {
 
@@ -281,7 +365,7 @@ if (year) {
 }
 
 
-/* BACK TOP */
+/* ================= BACK TO TOP ================= */
 
 if (backTop) {
 
@@ -289,7 +373,10 @@ if (backTop) {
         "scroll",
         function () {
 
-            if (window.scrollY > 500) {
+            if (
+                window.scrollY >
+                500
+            ) {
 
                 backTop.classList.add(
                     "show"
@@ -312,10 +399,15 @@ if (backTop) {
         function () {
 
             window.scrollTo({
+
                 top: 0,
-                behavior: "smooth"
+
+                behavior:
+                    "smooth"
+
             });
 
         }
     );
+
 }
